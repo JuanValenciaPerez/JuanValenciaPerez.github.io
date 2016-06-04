@@ -30,14 +30,14 @@
   
 
     <!-- Quote Form -->
-      <form>
+      <form ng-submit="createQuote()">
           <div class="form-group">
               <label>Quote</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" ng-model="text" required>
           </div>
           <div class="form-group">
               <label>Author</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" ng-model="author" required>
           </div>
           <input type="submit" class="btn btn-warning btn-lg" value="Add Quote">
       </form>
@@ -63,7 +63,7 @@
       <div class="panel panel-info" ng-repeat="quotes in quotes | filter: query">
         <div class="panel-heading">
           <h3 class="panel-title pull-left">{{quotes.author}}</h3>
-          <button class="pull-right close">x</button>
+          <button class="pull-right close" ng-click="deleteQuote($index)">x</button>
           <div class="clearfix"></div>
         </div>
         <div class="panel-body">{{quotes.text}}</div>
@@ -72,3 +72,17 @@
      </div>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

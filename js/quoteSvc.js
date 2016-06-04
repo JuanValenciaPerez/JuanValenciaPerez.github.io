@@ -15,18 +15,12 @@ angular.module('quoteApp')
       return quotes;
     };
 
-    // this.createQuote = function(newQuote) {
-    //   if(newQuote.text && newQuote.author) {
-    //     quotes.push(newQuote);
-    //   }
-    // };
-    //
-    // this.deleteQuote = function(textToRemove){
-    //   for (var i=0;i<quotes.length;i++){
-    //     if (quotes[i].text.toLowerCase() === textToRemove.toLowerCase()){
-    //       quotes.splice(i--,1);
-    //     }
-    //   }
-    // };
+    this.createQuote = function (text, author) {
+       	quotes.push({text: text, author: author});
+    };
+    
+    this.deleteQuote = function (index) {
+    	quotes.splice(index, 1);  
+    };
 
   });
